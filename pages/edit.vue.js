@@ -32,8 +32,8 @@ const Edit = {
   },
   template: `
   <section class="row">
-    <div class="col-12 d-flex justify-content-end">
-      <button class="btn btn-danger" @click="deleteNote">&times;</button>
+    <div class="col-12 d-flex">
+      <router-link :to="'/note/' + id" class="text-secondary text-decoration-none">&lt; Back</router-link>
     </div>
     <div class="col-12">
       <h1 class="display-4">Edit Note</h1>
@@ -42,9 +42,9 @@ const Edit = {
       <form @submit.prevent="updateNote">
         <input type="text" class="form-control my-3" placeholder="Title" v-model="title">
         <textarea class="form-control my-3" placeholder="New Note" v-model="text"></textarea>
-        <button class="btn btn-primary mr-3">Update Note</button>
-        <router-link to="/">Cancel</router-link>
-      </form> 
+        <button type="submit" class="btn btn-outline-primary me-3">Update Note</button>
+        <button class="btn btn-outline-danger" @click.prevent="deleteNote">Delete</button>
+      </form>
     </div>
   </section>
   `

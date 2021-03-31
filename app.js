@@ -1,4 +1,5 @@
-const app = new Vue({
-  el: '#app',
-  router
-})
+const app = Vue.createApp({ })
+
+app.use(router)
+
+const vm = app.mount('#app')

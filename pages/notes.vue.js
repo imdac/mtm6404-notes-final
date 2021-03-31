@@ -6,11 +6,10 @@ const Notes = {
   },
   mounted: function () {
     db.collection('notes')
-      .orderBy('date', 'desc')
+      .orderBy('title')
       .onSnapshot(snapshot => {
         const notesData = []
         snapshot.forEach(doc => notesData.push({
-          date: doc.data().date,
           title: doc.data().title,
           text: doc.data().text,
           id: doc.id

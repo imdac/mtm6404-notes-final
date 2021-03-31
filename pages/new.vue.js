@@ -16,6 +16,9 @@ const New = {
   },
   template: `
   <section class="row">
+    <div class="col-12 d-flex">
+      <router-link to="/" class="text-secondary text-decoration-none">&lt; Back</router-link>
+    </div>
     <div class="col-12">
       <h1 class="display-4">New Note</h1>
     </div>
@@ -24,7 +27,6 @@ const New = {
         <input type="text" class="form-control my-3" placeholder="Title" v-model="title">
         <textarea class="form-control my-3" placeholder="New Note" v-model="text"></textarea>
         <button class="btn btn-primary mr-3">Add Note</button>
-        <router-link to="/">Cancel</router-link>
       </form> 
     </div>
   </section>

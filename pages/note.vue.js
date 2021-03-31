@@ -23,13 +23,7 @@ const Note = {
       })
   },
   methods: {
-    dateString: function (timestamp) {
-      if (timestamp) {
-        const date = new Date(timestamp.seconds * 1000)
-        return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}`
-      }
-      return ''
-    }
+
   },
   template: `
   <section class="row">
@@ -40,7 +34,6 @@ const Note = {
       <router-link class="btn btn-outline-secondary" :to="'/edit/' + id">Edit</router-link>
     </div>
     <div class="col-12">
-      <p class="text-secondary text-center">{{ dateString(note.date) }}</p>
       <h1 class="display-4">{{ note.title }}</h1>
       <div>{{ note.text }}</div>
     </div>
